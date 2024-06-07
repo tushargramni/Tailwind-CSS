@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card{
+    @apply bg-white rounded-md overflow-hidden shadow-md relative;
+}
+
+.badge{
+    @apply bg-secondary-100 text-secondary-200 p-2 text-xs uppercase rounded-full absolute top-0 mt-2 ml-2;
+}
+.btn{
+    @apply rounded-full py-2 px-3 text-xs uppercase cursor-pointer font-bold tracking-wider;
+}
+/* .loader{ */
+    /* HTML: <div class="loader"></div> */
+.loader {
+    margin:  1rem auto;
+    --s: 20px;
+    --_d: calc(0.353*var(--s));
+    width: calc(var(--s) + var(--_d));
+    aspect-ratio: 1;
+    display: grid;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    grid-area: 1/1;
+    clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
+    background:
+      conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d),
+       #fff 135deg,#666 0 270deg,#aaa 0);
+    animation: l6 2s infinite;
+  }
+  .loader:after {
+    animation-delay:-1s;
+  }
+  @keyframes l6{
+    0%  {transform:translate(0,0)}
+    25% {transform:translate(30px,0)}
+    50% {transform:translate(30px,30px)}
+    75% {transform:translate(0,30px)}
+    100%{transform:translate(0,0)}
+  }
+/* } */
